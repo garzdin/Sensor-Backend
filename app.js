@@ -17,6 +17,12 @@ connection.on("open", function() {
   console.log("Successfully connected to MongoLab");
 });
 
+app.get('/', function(request, response) {
+  return response.send({
+    "message": "Welcome to the Automation API"
+  });
+});
+
 app.get('/api/retrieve', function(request, response) {
   sensor.find(function(error, data) {
     if(error) {
